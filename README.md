@@ -2,6 +2,8 @@
 
 A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent DeepSeek planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
 
+[Live operations desk](https://switchyard-control.choggyacc.chatgpt.site/) · [Public source](https://github.com/m7mdd77/switchyard-control). Release checkpoint: genuine local containment and hosted AI verified; walkthrough and competition submission are pending.
+
 All films, teams and publication channels are fictional. No external catalogue, email, account or public festival is modified. The jobs really mutate this prototype's records. Poster descriptions use supplied text briefs, not image analysis. Decision summaries are recorded operator explanations, not private chain of thought.
 
 ## Run locally
