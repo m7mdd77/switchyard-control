@@ -1,0 +1,17 @@
+.env*
+!.env.example
+data/
+outputs/
+node_modules/
+site/.git/
+site/node_modules/
+site/dist/
+site/.vinext/
+site/.wrangler/
+site/.sites-runtime/
+site/.dev.vars*
+site/.env*
+*.tsbuildinfo
+*.log
+docs/evidence/doo-entry-saved.jpg
+docs/evidence/doo-personal-receipt.json

@@ -1,0 +1,1 @@
+import{env}from'cloudflare:workers';import{api}from'../../../lib/control.js';export const dynamic='force-dynamic';const serve=(request:Request)=>api(request,env.DB,env);export const GET=serve;export const POST=serve;

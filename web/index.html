@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Switchyard — keep a hand on the work</title>
+    <meta
+      name="description"
+      content="A live control plane for three independent AI agents. Dispatch, intervene, approve and replay."
+    />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <a href="/" class="brand" aria-label="Switchyard home"
+          ><svg viewBox="0 0 32 32" aria-hidden="true">
+            <path
+              d="M8 2v8c0 7 16 5 16 13v7M24 2v8c0 7-16 5-16 13v7"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+            /></svg
+          >switchyard<span>®</span></a
+        >
+        <div class="mast">THE AGENT OPERATIONS DESK <i>01 / CONTROL</i></div>
+        <a id="export" href="/api/export?team=harbour">Export daybook ↗</a>
+      </header>
+      <div class="workspace">
+        <aside class="rail">
+          <span class="rail-label">ON THE LINE</span>
+          <div class="rail-mark">S<br />Y<br />—<br />01</div>
+          <div class="vertical">KEEP A HAND ON THE WORK</div>
+          <span class="rail-dot"></span>
+        </aside>
+        <main>
+          <section class="intro">
+            <div>
+              <p class="eyebrow">HUMAN IN COMMAND / AGENTS AT WORK</p>
+              <h1>Good work.<br /><em>Under control.</em></h1>
+              <p class="lede">
+                A connected fleet. A clear signal.<br />You decide what moves
+                next.
+              </p>
+            </div>
+            <div class="dispatch">
+              <label for="team">OPERATING SPACE</label
+              ><select id="team">
+                <option value="harbour">Harbour / Film Festival</option>
+                <option value="north">North Hall / Winter Reels</option></select
+              ><label for="scenario">THIS RUN</label
+              ><select id="scenario">
+                <option value="normal">Programme preparation</option>
+                <option value="scope-escape">
+                  Drill: Bulletin takes the wrong channel
+                </option></select
+              ><button id="start" class="start" disabled>
+                Dispatch fleet <span>↗</span>
+              </button>
+              <div id="connection" class="connection">
+                <i></i> Connecting to the control plane
+              </div>
+            </div>
+          </section>
+          <section class="status-strip" aria-label="Fleet overview">
+            <div>
+              <span class="live-dot"></span
+              ><strong id="fleet-name">HARBOUR FESTIVAL</strong
+              ><span class="tag">FICTIONAL WORKSPACE</span>
+            </div>
+            <div>
+              <span id="run-label">AWAITING DISPATCH</span
+              ><span id="signal-count">3 SIGNALS / 0 MOVING</span>
+            </div>
+          </section>
+          <div class="operations">
+            <section class="fleet" aria-labelledby="fleet-heading">
+              <div class="section-label">
+                <h2 id="fleet-heading">The working line</h2>
+                <span>AGENT → INTENT → AUTHORITY</span>
+              </div>
+              <div id="lanes"></div>
+              <section class="records">
+                <div class="section-label">
+                  <h2>On the programme</h2>
+                  <span id="record-count">3 FILMS</span>
+                </div>
+                <div id="records"></div>
+              </section>
+            </section>
+            <aside class="desk" aria-labelledby="desk-heading">
+              <div class="desk-top">
+                <span class="desk-icon">↗</span><span>THE OPERATOR’S DESK</span
+                ><span id="decision-count">00</span>
+              </div>
+              <h2 id="desk-heading">Your signal<br />is needed.</h2>
+              <p class="desk-lede">
+                Routine edits travel on their own.<br />Publication stops here.
+              </p>
+              <div id="approvals"></div>
+              <div class="usage-summary">
+                <span>FLEET USAGE</span
+                ><strong id="total-tokens">0 <small>tokens</small></strong>
+                <div id="total-cost">No model calls yet</div>
+                <p>Client cost estimates. Provider billing may differ.</p>
+              </div>
+              <div class="legend">
+                <span><i class="green"></i> Moving</span
+                ><span><i class="amber"></i> Held</span
+                ><span><i class="red"></i> Stopped</span>
+              </div>
+            </aside>
+          </div>
+          <section class="event-section" aria-labelledby="events-heading">
+            <div class="event-heading">
+              <div>
+                <p class="eyebrow">THE SWITCH LOG</p>
+                <h2 id="events-heading">Nothing moves off the record.</h2>
+              </div>
+              <div class="replay-controls">
+                <label for="replay-agent" class="sr-only">Agent to replay</label
+                ><select id="replay-agent">
+                  <option value="all">All agents</option>
+                  <option value="index">Index</option>
+                  <option value="caption">Caption</option>
+                  <option value="bulletin">Bulletin</option></select
+                ><button id="replay">↶ Replay steps</button>
+              </div>
+            </div>
+            <div id="replay-bar" hidden>
+              <span id="replay-caption">DECISION REPLAY</span
+              ><label for="scrub" class="sr-only">Replay event</label
+              ><input id="scrub" type="range" min="0" max="0" value="0" /><span
+                id="replay-position"
+              ></span
+              ><button id="live">Return to live ↗</button>
+            </div>
+            <div id="events"></div>
+          </section>
+          <footer>
+            <div>Different agents. One line of control.</div>
+            <span
+              >Fictional films and publication · no external systems
+              changed</span
+            ><a
+              href="https://github.com/m7mdd77/switchyard-control"
+              id="source-link"
+              >Inside Switchyard ↗</a
+            ><a id="video-link" href="/walkthrough.mp4" hidden
+              >Watch an intervention ↗</a
+            >
+          </footer>
+        </main>
+      </div>
+    </div>
+    <dialog id="detail">
+      <div class="modal-top">
+        <span id="detail-kicker">SIGNAL DETAIL</span
+        ><button id="close" aria-label="Close detail">×</button>
+      </div>
+      <div id="detail-content"></div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

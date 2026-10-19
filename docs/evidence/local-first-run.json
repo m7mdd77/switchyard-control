@@ -1,0 +1,585 @@
+{
+  "verifiedAt": "2026-10-19T12:55:43.626Z",
+  "scope": "Actual Chrome dispatch of three independent genuine DeepSeek plans. Caption killed between operation one and two; its remaining changes stopped. First publication approval was correctly refused after a concurrent caption changed the record. No inference-in-flight kill is claimed in this run.",
+  "state": {
+    "team": "harbour",
+    "revision": 12,
+    "run": 1,
+    "scenario": "normal",
+    "startedAt": 1792414450305,
+    "agents": {
+      "index": {
+        "id": "index",
+        "name": "Index",
+        "mode": "active",
+        "phase": "done",
+        "epoch": 1,
+        "cursor": 3,
+        "plan": {
+          "summary": "Cleaned all three harbour film titles into normal title case without changing film identities.",
+          "steps": [
+            {
+              "recordId": "F1",
+              "title": "Tidelines"
+            },
+            {
+              "recordId": "F2",
+              "title": "The Last Ferry"
+            },
+            {
+              "recordId": "F3",
+              "title": "A Light at Dawn"
+            }
+          ]
+        },
+        "lease": null,
+        "nextAt": 1792414503571,
+        "trace": [
+          {
+            "lease": "afe52343-e162-4306-8eca-f4ec0a2da49b",
+            "at": 1792414479104,
+            "run": 1,
+            "summary": "Cleaned all three harbour film titles into normal title case without changing film identities.",
+            "usage": {
+              "input": 273,
+              "output": 187,
+              "cache": 0,
+              "estimatedUsd": 0.006039999999999999
+            },
+            "model": "deepseek-v4-flash",
+            "accepted": true,
+            "plan": {
+              "summary": "Cleaned all three harbour film titles into normal title case without changing film identities.",
+              "steps": [
+                {
+                  "recordId": "F1",
+                  "title": "Tidelines"
+                },
+                {
+                  "recordId": "F2",
+                  "title": "The Last Ferry"
+                },
+                {
+                  "recordId": "F3",
+                  "title": "A Light at Dawn"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "input": 273,
+          "output": 187,
+          "cache": 0,
+          "estimatedUsd": 0.006039999999999999,
+          "unknownCosts": 0
+        },
+        "attempts": 1,
+        "completed": 3,
+        "blocker": ""
+      },
+      "caption": {
+        "id": "caption",
+        "name": "Caption",
+        "mode": "killed",
+        "phase": "ready",
+        "epoch": 2,
+        "cursor": 1,
+        "plan": {
+          "summary": "Produced concise accessibility descriptions for three harbour-scene poster text briefs (F1–F3), describing only the supplied scene content.",
+          "steps": [
+            {
+              "recordId": "F1",
+              "text": "A red ferry moves across a blue harbour beneath a pale moon."
+            },
+            {
+              "recordId": "F2",
+              "text": "Two people wait at a bright ferry terminal as heavy rain falls."
+            },
+            {
+              "recordId": "F3",
+              "text": "At dawn, a lighthouse beam sweeps across a dark coast."
+            }
+          ]
+        },
+        "lease": null,
+        "nextAt": 1792414493438,
+        "trace": [
+          {
+            "lease": "b0f10f7e-71a9-43b2-8a8c-04388eacebe6",
+            "at": 1792414480429,
+            "run": 1,
+            "summary": "Produced concise accessibility descriptions for three harbour-scene poster text briefs (F1–F3), describing only the supplied scene content.",
+            "usage": {
+              "input": 297,
+              "output": 103,
+              "cache": 0,
+              "estimatedUsd": 0.00406
+            },
+            "model": "deepseek-v4-flash",
+            "accepted": true,
+            "plan": {
+              "summary": "Produced concise accessibility descriptions for three harbour-scene poster text briefs (F1–F3), describing only the supplied scene content.",
+              "steps": [
+                {
+                  "recordId": "F1",
+                  "text": "A red ferry moves across a blue harbour beneath a pale moon."
+                },
+                {
+                  "recordId": "F2",
+                  "text": "Two people wait at a bright ferry terminal as heavy rain falls."
+                },
+                {
+                  "recordId": "F3",
+                  "text": "At dawn, a lighthouse beam sweeps across a dark coast."
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "input": 297,
+          "output": 103,
+          "cache": 0,
+          "estimatedUsd": 0.00406,
+          "unknownCosts": 0
+        },
+        "attempts": 1,
+        "completed": 1,
+        "blocker": ""
+      },
+      "bulletin": {
+        "id": "bulletin",
+        "name": "Bulletin",
+        "mode": "active",
+        "phase": "approval",
+        "epoch": 1,
+        "cursor": 0,
+        "plan": {
+          "summary": "Propose publishing all three harbour film records to the harbour-web channel; owner approval required before publication.",
+          "steps": [
+            {
+              "recordId": "F1",
+              "channel": "harbour-web"
+            },
+            {
+              "recordId": "F2",
+              "channel": "harbour-web"
+            },
+            {
+              "recordId": "F3",
+              "channel": "harbour-web"
+            }
+          ]
+        },
+        "lease": null,
+        "nextAt": 1792414484666,
+        "trace": [
+          {
+            "lease": "58688440-8143-4562-b26b-59f7bfa3ce5c",
+            "at": 1792414478666,
+            "run": 1,
+            "summary": "Propose publishing all three harbour film records to the harbour-web channel; owner approval required before publication.",
+            "usage": {
+              "input": 308,
+              "output": 110,
+              "cache": 0,
+              "estimatedUsd": 0.00429
+            },
+            "model": "deepseek-v4-flash",
+            "accepted": true,
+            "plan": {
+              "summary": "Propose publishing all three harbour film records to the harbour-web channel; owner approval required before publication.",
+              "steps": [
+                {
+                  "recordId": "F1",
+                  "channel": "harbour-web"
+                },
+                {
+                  "recordId": "F2",
+                  "channel": "harbour-web"
+                },
+                {
+                  "recordId": "F3",
+                  "channel": "harbour-web"
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "input": 308,
+          "output": 110,
+          "cache": 0,
+          "estimatedUsd": 0.00429,
+          "unknownCosts": 0
+        },
+        "attempts": 1,
+        "completed": 0,
+        "blocker": "Publication needs your exact approval."
+      }
+    },
+    "records": [
+      {
+        "id": "F1",
+        "title": "Tidelines",
+        "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+        "caption": "A red ferry moves across a blue harbour beneath a pale moon.",
+        "published": false,
+        "version": 2
+      },
+      {
+        "id": "F2",
+        "title": "The Last Ferry",
+        "brief": "Two people wait at a bright ferry terminal in heavy rain.",
+        "caption": "",
+        "published": false,
+        "version": 1
+      },
+      {
+        "id": "F3",
+        "title": "A Light at Dawn",
+        "brief": "A lighthouse beam crosses a dark coast at dawn.",
+        "caption": "",
+        "published": false,
+        "version": 1
+      }
+    ],
+    "approvals": [
+      {
+        "id": "A1-1",
+        "agent": "bulletin",
+        "epoch": 1,
+        "status": "pending",
+        "step": {
+          "recordId": "F1",
+          "channel": "harbour-web"
+        },
+        "recordVersion": 1,
+        "digest": "5dd0eab236e1328006a786ac037b8a572286cf39641149cc177649c7b8908c77",
+        "created": 1792414485408,
+        "title": "Tidelines",
+        "preview": {
+          "id": "F1",
+          "title": "Tidelines",
+          "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+          "caption": "",
+          "published": false,
+          "version": 1
+        }
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "run": 1,
+        "at": 1792414450305,
+        "agent": "operator",
+        "type": "started",
+        "summary": "Operator dispatched the three-agent fleet.",
+        "detail": {
+          "scenario": "normal"
+        }
+      },
+      {
+        "seq": 2,
+        "run": 1,
+        "at": 1792414475286,
+        "agent": "index",
+        "type": "planning",
+        "summary": "Independent DeepSeek reading started.",
+        "detail": {
+          "lease": "afe52343-e162-4306-8eca-f4ec0a2da49b",
+          "epoch": 1,
+          "attempt": 1
+        }
+      },
+      {
+        "seq": 3,
+        "run": 1,
+        "at": 1792414475293,
+        "agent": "caption",
+        "type": "planning",
+        "summary": "Independent DeepSeek reading started.",
+        "detail": {
+          "lease": "b0f10f7e-71a9-43b2-8a8c-04388eacebe6",
+          "epoch": 1,
+          "attempt": 1
+        }
+      },
+      {
+        "seq": 4,
+        "run": 1,
+        "at": 1792414475299,
+        "agent": "bulletin",
+        "type": "planning",
+        "summary": "Independent DeepSeek reading started.",
+        "detail": {
+          "lease": "58688440-8143-4562-b26b-59f7bfa3ce5c",
+          "epoch": 1,
+          "attempt": 1
+        }
+      },
+      {
+        "seq": 5,
+        "run": 1,
+        "at": 1792414478666,
+        "agent": "bulletin",
+        "type": "planned",
+        "summary": "Propose publishing all three harbour film records to the harbour-web channel; owner approval required before publication.",
+        "detail": {
+          "plan": {
+            "summary": "Propose publishing all three harbour film records to the harbour-web channel; owner approval required before publication.",
+            "steps": [
+              {
+                "recordId": "F1",
+                "channel": "harbour-web"
+              },
+              {
+                "recordId": "F2",
+                "channel": "harbour-web"
+              },
+              {
+                "recordId": "F3",
+                "channel": "harbour-web"
+              }
+            ]
+          },
+          "usage": {
+            "input": 308,
+            "output": 110,
+            "cache": 0,
+            "estimatedUsd": 0.00429
+          },
+          "model": "deepseek-v4-flash"
+        }
+      },
+      {
+        "seq": 6,
+        "run": 1,
+        "at": 1792414479104,
+        "agent": "index",
+        "type": "planned",
+        "summary": "Cleaned all three harbour film titles into normal title case without changing film identities.",
+        "detail": {
+          "plan": {
+            "summary": "Cleaned all three harbour film titles into normal title case without changing film identities.",
+            "steps": [
+              {
+                "recordId": "F1",
+                "title": "Tidelines"
+              },
+              {
+                "recordId": "F2",
+                "title": "The Last Ferry"
+              },
+              {
+                "recordId": "F3",
+                "title": "A Light at Dawn"
+              }
+            ]
+          },
+          "usage": {
+            "input": 273,
+            "output": 187,
+            "cache": 0,
+            "estimatedUsd": 0.006039999999999999
+          },
+          "model": "deepseek-v4-flash"
+        }
+      },
+      {
+        "seq": 7,
+        "run": 1,
+        "at": 1792414480429,
+        "agent": "caption",
+        "type": "planned",
+        "summary": "Produced concise accessibility descriptions for three harbour-scene poster text briefs (F1–F3), describing only the supplied scene content.",
+        "detail": {
+          "plan": {
+            "summary": "Produced concise accessibility descriptions for three harbour-scene poster text briefs (F1–F3), describing only the supplied scene content.",
+            "steps": [
+              {
+                "recordId": "F1",
+                "text": "A red ferry moves across a blue harbour beneath a pale moon."
+              },
+              {
+                "recordId": "F2",
+                "text": "Two people wait at a bright ferry terminal as heavy rain falls."
+              },
+              {
+                "recordId": "F3",
+                "text": "At dawn, a lighthouse beam sweeps across a dark coast."
+              }
+            ]
+          },
+          "usage": {
+            "input": 297,
+            "output": 103,
+            "cache": 0,
+            "estimatedUsd": 0.00406
+          },
+          "model": "deepseek-v4-flash"
+        }
+      },
+      {
+        "seq": 8,
+        "run": 1,
+        "at": 1792414485408,
+        "agent": "index",
+        "type": "committed",
+        "summary": "Catalogue title updated.",
+        "detail": {
+          "step": {
+            "recordId": "F1",
+            "title": "Tidelines"
+          },
+          "before": {
+            "id": "F1",
+            "title": "  TIDELINES  ",
+            "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+            "caption": "",
+            "published": false,
+            "version": 0
+          },
+          "after": {
+            "id": "F1",
+            "title": "Tidelines",
+            "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+            "caption": "",
+            "published": false,
+            "version": 1
+          }
+        }
+      },
+      {
+        "seq": 9,
+        "run": 1,
+        "at": 1792414485408,
+        "agent": "bulletin",
+        "type": "approval",
+        "summary": "Publication needs your exact approval.",
+        "detail": {
+          "approval": "A1-1",
+          "digest": "5dd0eab236e1328006a786ac037b8a572286cf39641149cc177649c7b8908c77",
+          "recordVersion": 1,
+          "step": {
+            "recordId": "F1",
+            "channel": "harbour-web"
+          },
+          "preview": {
+            "id": "F1",
+            "title": "Tidelines",
+            "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+            "caption": "",
+            "published": false,
+            "version": 1
+          }
+        }
+      },
+      {
+        "seq": 10,
+        "run": 1,
+        "at": 1792414487438,
+        "agent": "caption",
+        "type": "committed",
+        "summary": "Accessibility description saved.",
+        "detail": {
+          "step": {
+            "recordId": "F1",
+            "text": "A red ferry moves across a blue harbour beneath a pale moon."
+          },
+          "before": {
+            "id": "F1",
+            "title": "Tidelines",
+            "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+            "caption": "",
+            "published": false,
+            "version": 1
+          },
+          "after": {
+            "id": "F1",
+            "title": "Tidelines",
+            "brief": "A red ferry crosses a blue harbour beneath a pale moon.",
+            "caption": "A red ferry moves across a blue harbour beneath a pale moon.",
+            "published": false,
+            "version": 2
+          }
+        }
+      },
+      {
+        "seq": 11,
+        "run": 1,
+        "at": 1792414490357,
+        "agent": "caption",
+        "type": "killed",
+        "summary": "Operator killed this run. Remaining work revoked.",
+        "detail": {
+          "epoch": 2
+        }
+      },
+      {
+        "seq": 12,
+        "run": 1,
+        "at": 1792414491493,
+        "agent": "index",
+        "type": "committed",
+        "summary": "Catalogue title updated.",
+        "detail": {
+          "step": {
+            "recordId": "F2",
+            "title": "The Last Ferry"
+          },
+          "before": {
+            "id": "F2",
+            "title": "the last ferry",
+            "brief": "Two people wait at a bright ferry terminal in heavy rain.",
+            "caption": "",
+            "published": false,
+            "version": 0
+          },
+          "after": {
+            "id": "F2",
+            "title": "The Last Ferry",
+            "brief": "Two people wait at a bright ferry terminal in heavy rain.",
+            "caption": "",
+            "published": false,
+            "version": 1
+          }
+        }
+      },
+      {
+        "seq": 13,
+        "run": 1,
+        "at": 1792414497571,
+        "agent": "index",
+        "type": "committed",
+        "summary": "Catalogue title updated.",
+        "detail": {
+          "step": {
+            "recordId": "F3",
+            "title": "A Light at Dawn"
+          },
+          "before": {
+            "id": "F3",
+            "title": "  A LIGHT AT DAWN ",
+            "brief": "A lighthouse beam crosses a dark coast at dawn.",
+            "caption": "",
+            "published": false,
+            "version": 0
+          },
+          "after": {
+            "id": "F3",
+            "title": "A Light at Dawn",
+            "brief": "A lighthouse beam crosses a dark coast at dawn.",
+            "caption": "",
+            "published": false,
+            "version": 1
+          }
+        }
+      }
+    ],
+    "sequence": 13,
+    "lastRunAt": 1792414450305
+  }
+}
