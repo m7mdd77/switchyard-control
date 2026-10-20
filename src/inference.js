@@ -120,16 +120,23 @@ export function inference(
           cache: u.cache_read_input_tokens || 0,
           estimatedUsd: r.estimatedCostUsd ?? null,
         };
-      return {
-        plan: parse(
+      let plan;
+      try {
+        plan = parse(
           r.content
             .filter((x) => x.type === "text")
             .map((x) => x.text)
             .join(""),
           c,
-        ),
-        usage,
-      };
+        );
+      } catch (error) {
+        error.inputTokens = usage.input;
+        error.outputTokens = usage.output;
+        error.cacheReadTokens = usage.cache;
+        error.estimatedCostUsd = usage.estimatedUsd;
+        throw error;
+      }
+      return { plan, usage };
     } finally {
       clearTimeout(timer);
     }

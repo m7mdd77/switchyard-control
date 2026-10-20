@@ -78,7 +78,9 @@ function render() {
     ":" +
     replayIndex +
     ":" +
-    filter;
+    filter +
+    ":" +
+    Boolean(csrf);
   if (lastRender === key) return;
   lastRender = key;
   $("fleet-name").textContent =
@@ -100,13 +102,14 @@ function render() {
       ["killed", "quarantined"].includes(a.mode),
   );
   $("start").disabled =
-    !connected || pending || replaying || !canStart || state.run >= 5;
+    !csrf || !connected || pending || replaying || !canStart || state.run >= 5;
   $("start").innerHTML = state.run
     ? "Dispatch a fresh run <span>↗</span>"
     : "Dispatch fleet <span>↗</span>";
   $("scenario").disabled = !canStart || pending || replaying;
   $("export").href = "/api/export?team=" + team;
   document.body.classList.toggle("replaying", replaying);
+  document.body.classList.toggle("dispatched", state.run > 0);
   $("lanes").innerHTML = AGENTS.map((id) => {
     const a = state.agents[id],
       [label, klass] = signal(a),
@@ -114,7 +117,7 @@ function render() {
     const paused = a.mode === "paused";
     const stopped = ["killed", "quarantined"].includes(a.mode);
     const disabled = pending || replaying;
-    return `<article class="lane ${a.phase === "planning" ? "planning" : ""}" data-agent="${id}"><div class="lane-title"><button class="agent-name" data-inspect="${id}" aria-label="Inspect ${a.name}"><span class="monogram">${a.name[0]}</span><span><strong>${a.name} ↗</strong><small>${descriptions[id]}</small></span></button><span class="signal ${klass}"><i></i>${label}</span></div><div class="tracks">${[0, 1, 2].map((n) => `<div class="track-step ${n < a.cursor ? "done" : n === a.cursor && ["ready", "approval"].includes(a.phase) && a.mode === "active" ? "current" : ""}">${taskNames[id]}<span>F${n + 1} / ${n < a.cursor ? "CLOSED" : n === a.cursor && a.phase === "approval" ? "APPROVAL" : "PENDING"}</span></div>`).join("")}</div><div class="lane-bottom"><div class="agent-usage"><strong>${fmt(tokenCount(a.usage))}</strong> tokens · ${a.completed} writes<br>${cost(a.usage)}${a.usage.unknownCosts ? " · incomplete" : ""}</div><div class="agent-controls"><button data-op="${paused ? "resume" : "pause"}" data-agent="${id}" ${disabled || stopped || done || ["idle", "failed"].includes(a.phase) ? "disabled" : ""}>${paused ? "▶ Resume" : "Ⅱ Pause"}</button><button class="kill" data-kill="${id}" ${disabled || stopped || done || a.phase === "idle" ? "disabled" : ""}>■ Kill</button></div></div>${a.blocker ? '<p class="blocker">' + esc(a.blocker) + "</p>" : ""}</article>`;
+    return `<article class="lane ${a.phase === "planning" ? "planning" : ""}" data-agent="${id}"><div class="lane-title"><button class="agent-name" data-inspect="${id}" aria-label="Inspect ${a.name}"><span class="monogram">${a.name[0]}</span><span><strong>${a.name} ↗</strong><small>${descriptions[id]}</small></span></button><span class="signal ${klass}"><i></i>${label}</span></div><div class="tracks">${[0, 1, 2].map((n) => `<div class="track-step ${n < a.cursor ? "done" : n === a.cursor && ["ready", "approval"].includes(a.phase) && a.mode === "active" ? "current" : ""}">${taskNames[id]}<span>F${n + 1} / ${n < a.cursor ? "CLOSED" : n === a.cursor && a.phase === "approval" ? "APPROVAL" : "PENDING"}</span></div>`).join("")}</div><div class="lane-bottom"><div class="agent-usage"><strong>${fmt(tokenCount(a.usage))}</strong> tokens · ${a.completed} writes<br>${cost(a.usage)}${a.usage.unknownCosts ? " · incomplete" : ""}</div><div class="agent-controls"><button data-op="${paused ? "resume" : "pause"}" data-agent="${id}" data-epoch="${a.epoch}" data-run="${state.run}" ${disabled || stopped || done || ["idle", "failed"].includes(a.phase) ? "disabled" : ""}>${paused ? "▶ Resume" : "Ⅱ Pause"}</button><button class="kill" data-kill="${id}" data-epoch="${a.epoch}" data-run="${state.run}" ${disabled || stopped || done || a.phase === "idle" ? "disabled" : ""}>■ Kill</button></div></div>${a.blocker ? '<p class="blocker">' + esc(a.blocker) + "</p>" : ""}</article>`;
   }).join("");
   $("records").innerHTML = state.records
     .map(
@@ -274,12 +277,18 @@ function review(id) {
 document.addEventListener("click", (e) => {
   const b = e.target.closest("button");
   if (!b) return;
-  if (b.dataset.op) command({ op: b.dataset.op, agent: b.dataset.agent });
+  if (b.dataset.op)
+    command({
+      op: b.dataset.op,
+      agent: b.dataset.agent,
+      epoch: Number(b.dataset.epoch),
+      run: Number(b.dataset.run),
+    });
   if (b.dataset.kill) {
     const id = b.dataset.kill;
     modal(
       "TERMINATE / " + id.toUpperCase(),
-      `<h2>Kill ${state.agents[id].name}’s run?</h2><p>Uncommitted operations and pending approvals are revoked. Committed edits stay on the record. This run cannot resume; you can dispatch a fresh fleet later.</p><p>Already-started AI work may still be charged. A late result will be recorded but cannot change the programme.</p><div class="detail-actions"><button id="cancel-kill">Keep running</button><button class="primary" data-op="kill" data-agent="${id}">Kill this run ■</button></div>`,
+      `<h2>Kill ${state.agents[id].name}’s run?</h2><p>Uncommitted operations and pending approvals are revoked. Committed edits stay on the record. This run cannot resume; you can dispatch a fresh fleet later.</p><p>Already-started AI work may still be charged. A late result will be recorded but cannot change the programme.</p><div class="detail-actions"><button id="cancel-kill">Keep running</button><button class="primary" data-op="kill" data-agent="${id}" data-epoch="${b.dataset.epoch}" data-run="${b.dataset.run}">Kill this run ■</button></div>`,
     );
   }
   if (b.id === "cancel-kill") $("detail").close();
@@ -309,6 +318,7 @@ $("team").onchange = async () => {
   team = $("team").value;
   state = seed(team);
   csrf = "";
+  connected = false;
   replaying = false;
   lastRender = "";
   if ($("detail").open) $("detail").close();

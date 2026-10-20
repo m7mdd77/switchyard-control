@@ -88,10 +88,29 @@ export class Control {
       "stale",
       "A current revision is required.",
     );
-    return this.mutate(key, (s) => operator(s, c, this.now()), {
-      expected: c.revision,
-      request: c.request,
-    });
+    const targeted = ["pause", "resume", "kill"].includes(c.op);
+    if (targeted)
+      rule(
+        Number.isSafeInteger(c.epoch) && Number.isSafeInteger(c.run),
+        "stale",
+        "A current agent authority is required.",
+      );
+    return this.mutate(
+      key,
+      (s) => {
+        if (targeted)
+          rule(
+            s.run === c.run && s.agents[c.agent]?.epoch === c.epoch,
+            "stale",
+            "This agent’s authority changed. Review the current run.",
+          );
+        return operator(s, c, this.now());
+      },
+      {
+        expected: targeted ? undefined : c.revision,
+        request: c.request,
+      },
+    );
   }
   async work() {
     const rows = await this.db
@@ -312,6 +331,8 @@ export async function api(req, db, env = {}) {
           "scenario",
           "revision",
           "request",
+          "epoch",
+          "run",
         ].includes(k),
       ),
       "command",

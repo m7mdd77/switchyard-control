@@ -173,6 +173,7 @@ export function operator(s, c, now = Date.now()) {
         epoch: old.epoch + 1,
         phase: "queued",
         usage: old.usage,
+        trace: old.trace,
         attempts: old.attempts,
       };
     }

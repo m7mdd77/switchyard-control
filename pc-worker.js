@@ -64,6 +64,7 @@ async function plan(job) {
       usage: {
         input: e.inputTokens || 0,
         output: e.outputTokens || 0,
+        cache: e.cacheReadTokens || 0,
         estimatedUsd: e.estimatedCostUsd ?? null,
       },
     };

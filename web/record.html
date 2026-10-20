@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Record Switchyard — continuous intervention</title>
+    <style>
+      body {
+        background: #161b1e;
+        color: #f0f0e8;
+        font:
+          16px Arial,
+          sans-serif;
+        max-width: 750px;
+        padding: 45px 30px;
+        margin: auto;
+      }
+      h1 {
+        font-size: 50px;
+        letter-spacing: -2px;
+      }
+      p {
+        line-height: 1.8;
+        color: #a5b2b5;
+      }
+      button {
+        padding: 17px 24px;
+        background: #c4f36b;
+        border: 0;
+        border-radius: 4px;
+        font-size: 16px;
+        margin: 8px 12px 8px 0;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      #status {
+        padding: 20px;
+        border: 1px solid #435157;
+        margin-top: 20px;
+        line-height: 1.6;
+      }
+      small {
+        letter-spacing: 2px;
+        color: #c4f36b;
+      }
+    </style>
+    <script type="module" src="/record.js"></script>
+  </head>
+  <body>
+    <small>SWITCHYARD / WALKTHROUGH RECORDER</small>
+    <h1>Catch the work.<br />Keep the control.</h1>
+    <p>
+      Choose only the <strong>Switchyard — keep a hand on the work</strong> tab.
+      Do not share the recorder, your desktop or another page. The capture has
+      no audio.
+    </p>
+    <button id="choose">Choose demo tab</button
+    ><button id="record" disabled>Begin 90 seconds</button>
+    <div id="status" role="status">
+      Choose the demo tab first. The timer will wait until the walkthrough
+      begins.
+    </div>
+    <p>
+      After sharing is ready, reply “ready” in the chat. I will begin the timer
+      and drive the live pause, kill, exact approval and decision replay.
+      Existing AI plans may be prepared before recording; execution and
+      interventions will happen during capture.
+    </p>
+  </body>
+</html>

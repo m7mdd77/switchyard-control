@@ -1154,3 +1154,87 @@ dialog p {
     scroll-behavior: auto !important;
   }
 }
+@media (min-width: 1101px) {
+  body.dispatched header {
+    height: 70px;
+  }
+  body.dispatched main {
+    padding-top: 26px;
+  }
+  body.dispatched .intro {
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 22px;
+  }
+  body.dispatched .intro .eyebrow {
+    margin-bottom: 12px;
+    font-size: 8px;
+  }
+  body.dispatched h1 {
+    font-size: 35px;
+    line-height: 1.08;
+    letter-spacing: -1.7px;
+  }
+  body.dispatched h1 br {
+    display: none;
+  }
+  body.dispatched h1 em {
+    margin-left: 8px;
+  }
+  body.dispatched .lede {
+    display: none;
+  }
+  body.dispatched .dispatch {
+    width: auto;
+    grid-template-columns: 190px 230px 170px;
+    gap: 7px 10px;
+    padding-top: 0;
+  }
+  body.dispatched .dispatch label:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  body.dispatched .dispatch label:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  body.dispatched .dispatch select:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  body.dispatched .dispatch select:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  body.dispatched .dispatch .start {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  body.dispatched .dispatch .connection {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-size: 9px;
+    margin: 0;
+  }
+  body.dispatched .status-strip {
+    padding: 13px 0;
+  }
+  body.dispatched .operations {
+    margin-top: 23px;
+  }
+  body.dispatched .lane {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  body.dispatched .tracks {
+    margin-top: 17px;
+    margin-bottom: 15px;
+  }
+  body.dispatched .desk h2 {
+    margin-top: 17px;
+    font-size: 29px;
+  }
+}
