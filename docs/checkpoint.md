@@ -1,45 +1,11 @@
-# Resume Switchyard here
+# Switchyard release complete — October 20, 2026
 
-User stop boundary: stop with 20% remaining of the five-hour Codex allowance (80% used). Last meter before checkpoint was 76% used. Do not resume substantial work until the user continues or a fresh allowance is available. No competition entry has been submitted.
+The Agent Control Tower entry is submitted and verified saved. Earlier unfinished checkpoints are superseded by this release.
 
-Public demo: https://switchyard-control.choggyacc.chatgpt.site/
-Repository: https://github.com/m7mdd77/switchyard-control
-Mission: https://build.doo.ooo/challenges/agent-control-tower
-Site ID: appgprj_6ad610bbda148191a16e8dfd1450c208
-Site source: f465b4bb542dedbf48e19a6f69323963ce4ed0f0
-Saved version: appgprj_6ad610bbda148191a16e8dfd1450c208~appgver_a866332c6ed48191b4c7e9ae51f0514a
-Successful deployment: appgdep_6ad614978a988191a4c87f60d78aea3e
-Archive: ../switchyard-v1.tar.gz
+[Live demo](https://switchyard-control.choggyacc.chatgpt.site/) · [Public source](https://github.com/m7mdd77/switchyard-control) · [Continuous walkthrough](https://switchyard-control.choggyacc.chatgpt.site/walkthrough.mp4)
 
-22 passing tests; TypeScript and production build pass. A clean archive of initial root commit 30b47f9 passes all 22 checks and starts without a key on port 3315 (HTTP 200, no AI connected). Local Cloudflare migration applied once; hosted migration applied on successful publication. Native worker-token secret revision 1. Active credential/private-runtime archive scan: zero matches. Root vendors ordinary Site files, no Git submodule.
+The official mission page confirmed Entry saved and Update your entry. The sanitized receipt is docs/evidence/doo-submission-receipt.json. This confirms a saved entry, not judging, ranking or an award.
 
-Local genuine run 1: three model plans, actual between-operation Caption kill, stale publication correctly refused, fresh snapshot then F1 approved. Run 2: actual Caption inference-in-flight kill, late result recorded without any description writes; wrong-channel injection quarantines Bulletin; Index independently pauses/resumes and completes. See actual evidence JSON files. Public run 1 has three independent genuine model readings, verified via actual Chrome agent details in public-browser.json. Do not call tests or the rogue injected step genuine model output.
+All 26 tests pass. TypeScript and production builds pass. A clean archive of public source commit 07cfd82 passed all checks and started without credentials. The public video returns HTTP 200 as video/mp4. The 90.6-second continuous recording was reviewed and fully decoded, without cuts or speed changes. Its exact scope and hash are in docs/evidence/walkthrough.json. The earlier full normal run demonstrates all three generated descriptions and publications; the video separately demonstrates actual intervention and a disclosed incomplete draft approval.
 
-PC worker is intentionally running against the public URL using the original private sibling environment. Its session at checkpoint is 10074; do not print or copy credentials. Daymark's separate worker session 21761 is unrelated and should remain running. Local Switchyard preview and clean-check server are stopped at checkpoint.
-
-Chrome browser ID 3; public app tab 507472190; mission tab 507470660. CUA variables switchTab, missionTab, missionBrowser remain if persistent. Viewport override was reset after 390px check (scroll width 375px). Read CUA documentation on session recovery. Public tab is marked deliverable. The mission form is still empty.
-
-Remaining, in order:
-1. Verify public approval/refresh and a hosted kill/rogue flow, including unchanged North Hall state; save genuine evidence. Current public Harbour run has Bulletin awaiting its first exact approval.
-2. Improve compact layout after dispatch so three lanes and operator controls are easy to see together. The current initial hero consumes vertical space; this is a polish item, not verified finished work.
-3. Add any necessary inference usage regression: a successfully billed but unparsable response currently may lose reported usage because parse throws before returning; keep unavailable usage honest and preserve numeric diagnostics if fixing.
-4. Record a continuous 90-second walkthrough with user-selected tab sharing. Prepare precise actions before asking: pause/resume, kill, exact approval and decision replay. Do not let a download wait block capture; never use downloadMedia or waitForEvent(download) for this project (a previous project stalled hours).
-5. Validate/transcode full video without cuts or speed changes, enable video link, rebuild/redeploy using same Site ID and fresh credential. Keep exact source/packaging result.
-6. Update release/checklist and submission notes (<2000 characters), thesis <300 words, public source plus video, final clean check/audit. Site .gitignore now excludes tsbuildinfo; its cached file removal is prepared and must be included in next source-helper push. Do not replay the migration.
-7. Submit through the authenticated mission form under existing authorization. Verify “Entry saved” and “Update your entry,” save identity-bearing screenshot locally/ignored; do not claim awards. Push sanitized final release status.
-
-Keep product UI free of test counts and transport commentary. Retain necessary fictional-data and cost-estimate disclosures. No subagents were used. No memory files were updated.
-
-## Latest checkpoint — October 20, 2026
-
-STOP: the user’s boundary was missed during the continuous capture. Last meter was 94% used / 6% remaining. Do not continue goal work in this allowance. User must resume when ready; do not spend a reset credit automatically.
-
-The complete continuous recording is saved locally at outputs/walkthrough-1792475959348.webm (869,993 bytes). The recorder confirmed Saved. It has NOT yet been decoded/transcoded, reviewed or published. The capture included resume, pause, terminal kills of Bulletin and Index, fresh run 5 with new live genuine readings, in-flight Caption kill, F1 exact approval (explicitly no caption in that snapshot), Bulletin replay, and the final immutable F1 record. Be precise: the original attempted Caption kill while the pause command was pending was disabled; later Caption kill during run 5 was actually performed. Do not claim all intended actions occurred in the original run 4. Run 5 is the last allowed run in this Harbour workspace; use the existing state and do not silently reset its limit.
-
-26 tests pass, TypeScript and production build pass. Two final fixes: targeted pause/resume/kill validate the chosen agent’s run and epoch rather than being vetoed by unrelated fleet revision changes; historical per-reading traces are retained across fresh runs. Billed-but-unusable response numeric usage is also retained. The full hosted normal run published all three exact records; the scope drill left North Hall unchanged. Evidence files public-normal-complete.json and public-containment.json are saved.
-
-Public Site version 3 succeeded: source cd77c83084cc0ddf28e4432f63e0ccac544f2804, saved version appgprj_6ad610bbda148191a16e8dfd1450c208~appgver_c142ec9219188191b7ab05ef38f0a73c, deployment appgdep_6ad702a017f481919a72689f8649c3dc. Archive ../switchyard-v3.tar.gz audited with zero active credentials/private runtime paths. Version 2 source and deployment are retained in docs/release.md. Root GitHub still needs the final checkpoint/code push; local checkpoint commit preserves the current work.
-
-Current browser is now IAB, ID 3 (the browser inventory changed after the prior session). App tab is 1; recorder tab is 2. Persistent CUA variables missionBrowser, switchTab and switchRecorder exist if runtime survives. Recorder timer starts only after the agent clicks Begin 90 seconds; sharing was manually selected by the user and the capture completed. Local app server session 57442 and recorder session 78487 are stopped at this checkpoint. Public PC worker session 94901 remains intentionally running using the approved sibling private environment. Do not print secrets. Old worker 22968 stopped.
-
-Next: inspect/transcode full recording without cuts/speed changes, add truthful video metadata/scope, enable video link, rebuild and publish the same Site identity; update release/checklist/README. Submission notes are 1951 characters and thesis 244 words. Final clean-source verification/audit, push root source, then submit and verify saved entry under existing authorization. Mission URL: https://build.doo.ooo/challenges/agent-control-tower . No entry has been submitted.
+Public execution depends on the operator-hosted AI service remaining available, as documented in README.md. No further recording or competition submission is pending. No award is claimed.

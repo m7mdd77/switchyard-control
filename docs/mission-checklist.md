@@ -14,4 +14,4 @@ Live mission: [The Agent Control Tower](https://build.doo.ooo/challenges/agent-c
 | Architecture and thesis | `architecture.md`, `failure-test.md`, methodology map, and `thesis.md` (244 words). |
 | Multi-team awareness and export | Two isolated fictional teams per visitor, separate visitor records, ordinary JSON attachment export and authenticated worker control plane. |
 | Public source and demo | Public GitHub repository and ChatGPT Site. Clean-source and release verification recorded in `release.md`. |
-| Competition receipt | Final saved-entry confirmation pending; do not infer judging or an award. |
+| Competition receipt | Submitted October 20, 2026. Official page confirmed “Entry saved. Grab your share kit below ↓” and “Update your entry.” Sanitized receipt: `evidence/doo-submission-receipt.json`. Identity-bearing screenshot remains local and ignored. No judging or award outcome is claimed. |
