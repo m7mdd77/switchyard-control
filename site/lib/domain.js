@@ -431,7 +431,7 @@ export function result(s, id, leaseId, result, now = Date.now()) {
     run: started.run,
     summary: result.plan?.summary || "No usable plan returned.",
     usage: clone(result.usage || {}),
-    model: "deepseek-v4-flash",
+    model: ["gpt-6.1-sol", "deepseek-v4-flash"].includes(result.model) ? result.model : "unknown",
     accepted: live && !result.error,
   };
   a.trace.push(trace);

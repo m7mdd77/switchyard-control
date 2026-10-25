@@ -7,9 +7,9 @@ export function configuration(env = process.env) {
   const endpoint = new URL(
       env.AGENTROUTER_BASE_URL || "https://agentrouter.org",
     ),
-    model = env.AGENTROUTER_MODEL || "deepseek-v4-flash",
+    model = env.AGENTROUTER_MODEL || "gpt-6.1-sol",
     key = env.AGENTROUTER_API_KEY || "",
-    clientPath = env.CLAUDE_CODE_PATH || "C:/Users/User/.local/bin/claude.exe";
+    clientPath = env.CODEX_PATH || "codex.exe";
   rule(
     endpoint.protocol === "https:" &&
       endpoint.hostname === "agentrouter.org" &&
@@ -17,16 +17,16 @@ export function configuration(env = process.env) {
       !endpoint.password &&
       !endpoint.search &&
       !endpoint.hash &&
-      model === "deepseek-v4-flash",
+      model === "gpt-6.1-sol",
     "configuration",
-    "Use the approved AgentRouter origin and DeepSeek model.",
+    "Use the approved AgentRouter origin and Sol model.",
   );
   return {
     endpoint: endpoint.origin,
     model,
     key,
     clientPath,
-    configured: Boolean(key && existsSync(clientPath)),
+    configured: Boolean(key && (existsSync(clientPath) || !/[\\/]/.test(clientPath))),
   };
 }
 export function messages(c) {
@@ -136,7 +136,7 @@ export function inference(
         error.estimatedCostUsd = usage.estimatedUsd;
         throw error;
       }
-      return { plan, usage };
+      return { plan, usage, model: config.model };
     } finally {
       clearTimeout(timer);
     }

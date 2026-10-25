@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-10-25T05:21:23.407Z",
+  "model": "gpt-6.1-sol",
+  "runs": [
+    {
+      "name": "switchyard",
+      "ok": true,
+      "model": "gpt-6.1-sol",
+      "usage": {
+        "input": 4284,
+        "output": 248,
+        "cache": 0,
+        "estimatedUsd": null
+      },
+      "steps": 3
+    }
+  ]
+}

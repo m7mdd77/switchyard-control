@@ -1,3 +1,5 @@
+Current runtime: **GPT 6.1 Sol through AgentRouter**. See [configuration and verification](docs/sol-migration.md). Dated DeepSeek recordings remain historical evidence.
+
 # Switchyard — keep a hand on the work
 
 A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent DeepSeek planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
