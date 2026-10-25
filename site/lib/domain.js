@@ -311,7 +311,7 @@ export function claim(s, id, leaseId, now = Date.now()) {
     s,
     id,
     "planning",
-    "Independent DeepSeek reading started.",
+    "Independent Sol reading started.",
     { lease: leaseId, epoch: a.epoch, attempt: a.attempts },
     now,
   );
