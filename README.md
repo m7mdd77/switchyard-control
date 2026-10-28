@@ -1,8 +1,8 @@
-Current runtime: **GPT 6.1 Sol through AgentRouter**. See [configuration and verification](docs/sol-migration.md). Dated DeepSeek recordings remain historical evidence.
+Current runtime: **Qwen 3.8 27B through Cerebras**. See [configuration and fresh verification](docs/cerebras-migration.md). Earlier provider recordings and evidence remain dated history.
 
 # Switchyard — keep a hand on the work
 
-A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent DeepSeek planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
+A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent Qwen planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
 
 [Live operations desk](https://switchyard-control.choggyacc.chatgpt.site/) · [Public source](https://github.com/m7mdd77/switchyard-control) · [Continuous intervention walkthrough](https://switchyard-control.choggyacc.chatgpt.site/walkthrough.mp4)
 
@@ -21,7 +21,7 @@ node server.js
 
 Open http://127.0.0.1:3311. Without an AI worker, the app accurately shows its live service offline. Existing records, export, replay and stop controls remain usable. No canned inference fallback is provided.
 
-For genuine AI, configure an ignored `.env` from `.env.example`, then run the real supported Claude Code client through the approved AgentRouter account:
+For genuine AI, configure an ignored `.env` from `.env.example`, then use the bounded direct Cerebras API adapter:
 
 ```powershell
 $env:SWITCHYARD_SITE_URL='http://127.0.0.1:3311'

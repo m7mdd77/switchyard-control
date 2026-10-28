@@ -311,7 +311,7 @@ export function claim(s, id, leaseId, now = Date.now()) {
     s,
     id,
     "planning",
-    "Independent Sol reading started.",
+    "Independent AI reading started.",
     { lease: leaseId, epoch: a.epoch, attempt: a.attempts },
     now,
   );
@@ -431,7 +431,7 @@ export function result(s, id, leaseId, result, now = Date.now()) {
     run: started.run,
     summary: result.plan?.summary || "No usable plan returned.",
     usage: clone(result.usage || {}),
-    model: ["gpt-6.1-sol", "deepseek-v4-flash"].includes(result.model) ? result.model : "unknown",
+    model: ["qwen-3.8-27b", "gpt-6.1-sol", "deepseek-v4-flash"].includes(result.model) ? result.model : "unknown",
     accepted: live && !result.error,
   };
   a.trace.push(trace);

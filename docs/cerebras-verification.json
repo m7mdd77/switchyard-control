@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-10-28T07:30:49.965Z",
+  "provider": "Cerebras",
+  "model": "qwen-3.8-27b",
+  "scope": "Fresh genuine proposal-only migration checks on synthetic data. Existing operator allowance directories retained. No external actions or cached answers.",
+  "tests": {
+    "passed": 33,
+    "failed": 0,
+    "scope": "Local regression and mocked provider boundary tests; independent from the genuine call below."
+  },
+  "local": {
+    "name": "switchyard",
+    "ok": true,
+    "model": "qwen-3.8-27b",
+    "usage": {
+      "input": 242,
+      "output": 117,
+      "cache": 0,
+      "estimatedUsd": null
+    },
+    "steps": 3,
+    "elapsedMs": 393
+  },
+  "publicVerification": {
+    "name": "switchyard",
+    "ok": true,
+    "readings": [
+      {
+        "agent": "index",
+        "model": "qwen-3.8-27b",
+        "accepted": true,
+        "usage": {
+          "input": 242,
+          "output": 123,
+          "cache": 0,
+          "estimatedUsd": null
+        }
+      },
+      {
+        "agent": "caption",
+        "model": "qwen-3.8-27b",
+        "accepted": true,
+        "usage": {
+          "input": 270,
+          "output": 131,
+          "cache": 0,
+          "estimatedUsd": null
+        }
+      },
+      {
+        "agent": "bulletin",
+        "model": "qwen-3.8-27b",
+        "accepted": true,
+        "usage": {
+          "input": 273,
+          "output": 114,
+          "cache": 0,
+          "estimatedUsd": null
+        }
+      }
+    ],
+    "publicationApproved": false,
+    "elapsedMs": 16679
+  },
+  "deployment": {
+    "name": "switchyard",
+    "project_id": "appgprj_6ad610bbda148191a16e8dfd1450c208",
+    "version_id": "appgprj_6ad610bbda148191a16e8dfd1450c208~appgver_a17f9448df9c81918222c32d6a562f59",
+    "deployment_id": "appgdep_6ae1a98d83d88191a600cb4ac0b0c115",
+    "status": "succeeded",
+    "url": "https://switchyard-control.choggyacc.chatgpt.site",
+    "commit_sha": "2fb7fb1716194109d6e65b61a9cafd76374bc970"
+  }
+}

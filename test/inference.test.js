@@ -48,7 +48,7 @@ test("independent planners receive distinct scoped inputs and no alternate provi
   assert(!b[1].content.includes("title"));
   assert(c[0].content.includes("north-web"));
   assert.throws(
-    () => configuration({ AGENTROUTER_BASE_URL: "https://elsewhere.invalid" }),
+    () => configuration({ CEREBRAS_BASE_URL: "https://elsewhere.invalid" }),
     /approved/,
   );
 });
