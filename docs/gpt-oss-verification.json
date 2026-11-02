@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-02T09:16:57.230Z",
+  "provider": "Cerebras",
+  "model": "gpt-oss-120b",
+  "credentialSource": "New operator-selected private key file; no credential contents or personal file paths published.",
+  "tests": {
+    "passed": 33,
+    "failed": 0,
+    "scope": "Local regression tests with injected provider responses; separate from genuine model evidence."
+  },
+  "local": {
+    "name": "switchyard",
+    "ok": true,
+    "model": "gpt-oss-120b",
+    "usage": {
+      "input": 238,
+      "output": 178,
+      "cache": 0,
+      "estimatedUsd": null
+    },
+    "steps": 3,
+    "elapsedMs": 750
+  },
+  "previousLocalAttempts": [
+    {
+      "name": "switchyard",
+      "ok": false,
+      "code": "client_request_failed",
+      "message": "Cerebras is rate-limiting requests. No automatic retry was made.",
+      "elapsedMs": 271,
+      "retryAfterMs": 57000
+    }
+  ],
+  "publicVerification": {
+    "name": "switchyard",
+    "ok": true,
+    "readings": [
+      {
+        "agent": "index",
+        "model": "gpt-oss-120b",
+        "accepted": true,
+        "usage": {
+          "input": 110,
+          "output": 157,
+          "cache": 128,
+          "estimatedUsd": null
+        }
+      },
+      {
+        "agent": "caption",
+        "model": "gpt-oss-120b",
+        "accepted": true,
+        "usage": {
+          "input": 265,
+          "output": 255,
+          "cache": 0,
+          "estimatedUsd": null
+        }
+      },
+      {
+        "agent": "bulletin",
+        "model": "gpt-oss-120b",
+        "accepted": true,
+        "usage": {
+          "input": 269,
+          "output": 136,
+          "cache": 0,
+          "estimatedUsd": null
+        }
+      }
+    ],
+    "publicationApproved": false,
+    "elapsedMs": 11252
+  },
+  "deployment": {
+    "name": "switchyard",
+    "project_id": "appgprj_6ad610bbda148191a16e8dfd1450c208",
+    "version_id": "appgprj_6ad610bbda148191a16e8dfd1450c208~appgver_fcda204c11f48191a362ac5241e9da5e",
+    "deployment_id": "appgdep_6ae853e36be08191af15f8f917a1a050",
+    "status": "succeeded",
+    "url": "https://switchyard-control.choggyacc.chatgpt.site",
+    "commit_sha": "0a2739e4ac1c1ba72b70613308b7fa5ce1bcb846"
+  }
+}
