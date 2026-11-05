@@ -1,8 +1,8 @@
-Current runtime: **GPT-OSS 120B through Cerebras**, using the operator's newly selected private key. See [current verification and setup](docs/gpt-oss-migration.md). Earlier Qwen, Sol, Astra and DeepSeek evidence remains dated history.
+Current runtime: **Qwen 3.8 27B through Cerebras**, selected on 5 November 2026 with the current private key. See [current setup and verification](docs/qwen-nov5-migration.md). Earlier model records and recordings remain dated history.
 
 # Switchyard — keep a hand on the work
 
-A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent GPT-OSS planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
+A working [Agent Control Tower](https://build.doo.ooo/challenges/agent-control-tower) for a fictional film festival. Three independent Qwen planners produce actual catalogue, accessibility and publication operations. A durable control plane decides what may commit. The operator can pause, resume, kill, approve exact snapshots, inspect usage and replay recorded decision summaries.
 
 [Live operations desk](https://switchyard-control.choggyacc.chatgpt.site/) · [Public source](https://github.com/m7mdd77/switchyard-control) · [Continuous intervention walkthrough](https://switchyard-control.choggyacc.chatgpt.site/walkthrough.mp4)
 
